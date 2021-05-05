@@ -5,14 +5,25 @@ import './App.css';
 class App extends React.Component {
   
   state = {
+    user: {
+      username: "",
+      password: ""
+    }
+  }
 
+   handleUserChange = (e) => {
+    this.setState({user: {...this.state.user, username: e.target.value}})
+  }
+
+  handlePasswordChange = (e) => {
+    this.setState({user: {...this.state.user, password: e.target.value}})
   }
 
   render() {
     return (
       <div className="App">
         <h1>Log-In App</h1>
-        <LogIn />
+        <LogIn handleUser={this.handleUserChange} handlePassword={this.handlePasswordChange}/>
       </div>
   );
   }
