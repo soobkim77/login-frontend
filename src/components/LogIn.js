@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button'
 const LogIn = (props) => {
     return (
         <div className="login">
-            <form className="form" id='login'>
+            <form className="form" id='login' onSubmit={(e) => props.handleCreate(e)}>
                 <span>Username: </span>
                 <TextField
                     variant="outlined"
